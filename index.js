@@ -6,7 +6,6 @@ const {register} = require('./controllers/authController')
 const {login} = require('./controllers/authController')
 const cors = require('cors')
 const app = express();
-const serverless = require('serverless-http')
 
 // Connect Database
 connectDB();
@@ -36,4 +35,3 @@ app.post('/login',login)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-module.exports.handler = serverless(app);
